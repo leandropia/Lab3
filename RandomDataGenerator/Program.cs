@@ -25,7 +25,7 @@ namespace RandomDataGenerator
       
 
         {
-            bool displayMenu = true;
+            bool displayMenu = true; //
             while (displayMenu)
             {
                 displayMenu = Menu();
@@ -92,6 +92,7 @@ namespace RandomDataGenerator
 
         }
 
+        // some comment
 
         public static void CreatePerson()
         {
