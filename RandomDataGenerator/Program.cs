@@ -12,6 +12,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,9 +41,9 @@ namespace RandomDataGenerator
             Console.WriteLine("1) Create a Person");
             Console.WriteLine("2) Display Person");
             Console.WriteLine("3) Delete Person");
-            Console.WriteLine("4) Display Random Last Name");
-            Console.WriteLine("5) Display Random SSN");
-            Console.WriteLine("6) Display Random Phone number");
+            Console.WriteLine("4) Display a Random Last Name List");
+            Console.WriteLine("5) Display a Random SSN");
+            Console.WriteLine("6) Display a Random Phone number");
             Console.WriteLine("9) EXIT");
             string result = Console.ReadLine();
 
@@ -63,20 +64,46 @@ namespace RandomDataGenerator
             }
             else if (result == "4")
             {
-                Person randomLastName = new Person();
-               // Console.WriteLine(randomLastName.LastName);
+
+
+                foreach (string lastname in Enum.GetNames(typeof(LastName)))
+                {
+                    Console.WriteLine(lastname);
+                }
+                Console.WriteLine();
+                Console.WriteLine("Press ENTER to return to the Menu.");
+                Console.ReadLine();
                 return true;
             }
             else if (result == "5")
             {
+
+
+
                 Person randomSSN = new Person();
-              //  Console.WriteLine(randomSSN.SSN);
+
+
+             
+                     Console.WriteLine("Here is a random invalid SSN: " + randomSSN.SSN);
+
+                     Console.WriteLine("Press ENTER to return to the Menu.");
+                     Console.ReadLine();
+
+
+               
+                Console.ReadLine();
                 return true;
             }
             else if (result == "6")
             {
                 Person randomPhone = new Person();
-             //   Console.WriteLine(randomPhone.Phone.Number);
+
+                Console.WriteLine("Here is a random Phone No.: " + randomPhone.Phone.Number);
+
+                Console.WriteLine();
+                Console.WriteLine("Press ENTER to return to the Menu.");
+                Console.ReadLine();
+
                 return true;
             }
             else if (result == "9")
@@ -103,9 +130,10 @@ namespace RandomDataGenerator
 
             for (int i = 0; i < result; i++)
             {
-                people.Add(new Person());           // 
+                people.Add(new Person());
             }
 
+            Console.WriteLine();
             Console.WriteLine($"Created {result} Person(s). Press ENTER to return to the Menu.");
             Console.ReadLine();
 
@@ -119,7 +147,10 @@ namespace RandomDataGenerator
                 Console.WriteLine(people[i]);
                 
             }
-                Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine($"Displayed {people.Count} Person(s). Press ENTER to return to the Menu.");
+            Console.ReadLine();
         }
 
 
@@ -139,9 +170,10 @@ namespace RandomDataGenerator
             else if (people[result] != null)
             {
                 people.Remove(people[result]);
-                Console.WriteLine($"The person at index ID # {result} was deleted");
+                Console.WriteLine();
+                Console.WriteLine($"The person at index ID # {result} was deleted. Press ENTER to return to the Menu.");
+                Console.ReadLine();
             }
-
         }
     }
 }

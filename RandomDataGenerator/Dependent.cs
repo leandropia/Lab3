@@ -1,8 +1,8 @@
 ﻿///-----------------------------------------------------------------
 ///   Namespace:      RandomDataGenerator
-///   Class:          LasName <ENUM>
+///   Class:          Dependent
 ///   Description:    CSCI-2910-201 - LAB 3
-///   Author:         NASCIMENTO, LEO              Date:  09.11.2022
+///   Author:         NASCIMENTO, LEO              Date:  09.13.2022
 ///   Notes:          <Notes>
 ///-----------------------------------------------------------------
 ///   Revision History: N/A
@@ -10,14 +10,15 @@
 ///-----------------------------------------------------------------
 ///
 using System;
-using System.Text;
 namespace RandomDataGenerator
 {
-    public enum LastName
+    public class Dependent : Person
     {
-        Rosales, Barrera, Cannon, Greer, Dawson, Graham, Mccarty,
-        Mcclain, Reed, Poole, Pugh, Donovan, Ruiz, Patel, Petty,
-        Yates, Singh, Rivas, Mullins, Odonnell
+        public Dependent() : base()
+        {
+            Random rand = new Random();
+            BirthDate = DateTime.Now.AddYears(rand.Next(11));
+        }
     }
 }
 
